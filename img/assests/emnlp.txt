@@ -1,0 +1,20 @@
+@inproceedings{sheik-etal-2022-efficient,
+    title = "Efficient Deep Learning-based Sentence Boundary Detection in Legal Text",
+    author = "Sheik, Reshma  and
+      T, Gokul  and
+      Nirmala, S",
+    editor = "Aletras, Nikolaos  and
+      Chalkidis, Ilias  and
+      Barrett, Leslie  and
+      Goan{\textcommabelow{t}}{\u{a}}, C{\u{a}}t{\u{a}}lina  and
+      Preo{\textcommabelow{t}}iuc-Pietro, Daniel",
+    booktitle = "Proceedings of the Natural Legal Language Processing Workshop 2022",
+    month = dec,
+    year = "2022",
+    address = "Abu Dhabi, United Arab Emirates (Hybrid)",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.nllp-1.18",
+    doi = "10.18653/v1/2022.nllp-1.18",
+    pages = "208--217",
+    abstract = "A key component of the Natural Language Processing (NLP) pipeline is Sentence Boundary Detection (SBD). Erroneous SBD could affect other processing steps and reduce performance. A few criteria based on punctuation and capitalization are necessary to identify sentence borders in well-defined corpora. However, due to several grammatical ambiguities, the complex structure of legal data poses difficulties for SBD. In this paper, we have trained a neural network framework for identifying the end of the sentence in legal text. We used several state-of-the-art deep learning models, analyzed their performance, and identified that Convolutional Neural Network(CNN) outperformed other deep learning frameworks. We compared the results with rule-based, statistical, and transformer-based frameworks. The best neural network model outscored the popular rule-based framework with an improvement of 8{\%} in the F1 score. Although domain-specific statistical models have slightly improved performance, the trained CNN is 80 times faster in run-time and doesn{'}t require much feature engineering. Furthermore, after extensive pretraining, the transformer models fall short in overall performance compared to the best deep learning model.",
+}
