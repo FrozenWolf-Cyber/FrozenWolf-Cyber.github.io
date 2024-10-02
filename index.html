@@ -28,7 +28,34 @@
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap" rel="stylesheet">
     <script src="js/modernizr.js"></script>
     <meta name="google-site-verification" content="of5d9ckLytWKCHg9c9NZ7oTGOIP9pyZIvhsY-E1l-kY" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+       
+        .button {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .google-slides {
+            background-color: #5796fb; /* Google Slides blue */
+        }
+        .notion {
+            background-color: #fd6969; /* Notion red */
+        }
+        .button:hover {
+            opacity: 0.9;
+        }
+        .icon {
+            margin-right: 8px; /* Space between icon and text */
+        }
+    </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -70,6 +97,12 @@
                     <li class="page-scroll">
                         <a href="#projects">Projects</a>
                     </li>
+
+                    <li class="page-scroll">
+                        <a href="#presentation">Presentation & Surveys</a>
+                    </li>
+                    
+
                     <li>
                         <a href="https://drive.google.com/file/d/1xgukjX0Roh4qaay9HiSJre7WK5HIBV05/view?usp=sharing" target="_blank">CV</a>
                     </li>
@@ -196,12 +229,20 @@
                     <hr class="light">
                 </div>
                 <div class="row">
+                    <div class="col-xs-4 news-date">Sep 2024</div>
+                    <div class="col-xs-8"><b>Achieved 13th rank out of 74,000 participants nationwide in the <span style="color: #E73916"> Amazon ML Challenge </span> !</b></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 news-date">Sep 2024</div>
+                    <div class="col-xs-8"><b>One first author paper submitted at <span style="color: #E73916">WACV 2025 Conference</span> (affliated with CMU) !</b></div>
+                </div>
+                <div class="row">
                     <div class="col-xs-4 news-date">Jun 2024</div>
                     <div class="col-xs-8"><b>Joined <span style="color: #E73916">Indian Institute of Science</span> as research intern!</b></div>
                 </div>
                 <div class="row">
                     <div class="col-xs-4 news-date">April 2024</div>
-                    <div class="col-xs-8"><b>One paper accepted in <span style="color: #E73916">CVPR 2024 Workshop on Pixel-level Video Understanding in the Wild Challenge</span> !</b></div>
+                    <div class="col-xs-8"><b>One paper accepted in <span style="color: #E73916">CVPR 2024 Workshop </span> on Pixel-level Video Understanding in the Wild Challenge !</b></div>
                 </div>
                 <div class="row">
                     <div class="col-xs-4 news-date">Dec 2023</div>
@@ -217,7 +258,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-4 news-date">Feb 2023</div>
-                    <div class="col-xs-8"><b>One paper accepted in <span style="color: #E73916">EMNLP 2022 Workshop on Natural Legal Language Processing </span> !</b></div>
+                    <div class="col-xs-8"><b>One paper accepted in <span style="color: #E73916">EMNLP 2022 Workshop </span> on Natural Legal Language Processing !</b></div>
                 </div>
                 <div class="row">
                     <div class="col-xs-4 news-date">Nov 2022</div>
@@ -354,9 +395,9 @@
                             style="width: 25vw; background-image: url(img/projects/nus/15-ezgif.com-video-to-gif-converter.gif);">
                         </div>
                         <article class="article">
-                            <h1>Surgical Motion Planning</h1>
+                            <h1>MASS (My ASSistant)</h1>
                             <p>
-                                Project is aimed to devlop Robotic Motion Planning in surgical scenarios using Large Language Models and Reinforcement Learning/Imitation Learning techniques.
+MASS uses an LLM to assist surgeons in automating surgical robots by sequencing actions from simple instructions. The project develops robotic motion planning with LLMs and reinforcement/imitation learning for surgery.
                             </p>
                             <span>NUS/CUHK</span>
                         </article>
@@ -367,11 +408,10 @@
                 <div class="item-3">
 
                     <a href="#cmu" class="card portfolio-link" data-toggle="modal">
-                        <div class="thumb" style=" background-image: url(img/projects/cmu.png);"></div>
+                        <div class="thumb" style=" background-image: url(img/projects/cmu.gif);"></div>
                         <article class="article">
-                            <h1>Few shot Self Self-supervised Segmentation using Weak Labels</h1>
-                            <p>This project focuses on weak label Cryo-ET segmentation for few-shot learning setup by integrating self-supervised learning using SimCLR and NT XNet loss, including tomogram tailored AugMix. 
-                                 </p>
+                            <h1>SaSi: A Self-augmented and Self-interpreted for Few-shot Cryo-ET Particle Detection</h1>
+                            <p>Submitted to WACV 2025, this project introduces a SaSi deep learning approach for weak label cryo-ET segmentation in few-shot learning, using Consistency Loss, SimCLR, and AugMix to improve data efficiency and outperform existing methods. </p>
                             </p>
                             <span>CMU</span>
                         </article>
@@ -1335,6 +1375,144 @@ A key component of the Natural Language Processing (NLP) pipeline is Sentence Bo
             </div>
         </div>
     </div>
+
+
+
+    <!-- About Section -->
+    <section class="success" id="presentation">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Presentation & Surveys</h2>
+                    <hr class="light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 col-xs-12">
+                    <img class="img-responsive" src="img/projects/dl_teach.png" style="width: 300px; height: 140px;" alt="">
+                </div>
+                <div class="col-sm-8 col-xs-12">
+                    <div class="pubt"><strong>Introduction to Deep Learning</strong></div>
+                    <div class="pubv"><b>Workshop 2023</b> </div>
+                    These slides cover entire deep learning from basic till generative models like GANs and Diffusion Based Models. The slides progress from basic neural networks to advanced models like GANs and Diffusion Based Models along with notebooks and visualizations.
+                    <div class="publ_">
+                        <ul style="list-style-type: none; padding: 0;">
+                            <li style="margin-bottom: 10px;">
+                                <a href="https://docs.google.com/presentation/d/1OTKlOIsqToT6K8lM0iTgMkguyzXt8DgZOraRozAy6Os/edit?usp=sharing" target="_blank" class="button google-slides">
+                                    <i class="fab fa-google icon"></i>
+                                    <b>Slides</b>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://linktr.ee/dl_workshop?utm_source=linktree_profile_share&ltsid=84e5ac63-9c82-4d22-9425-5954a9ee3b03" target="_blank" class="button notion">
+                                    <i class="fas fa-link"></i> <!-- Placeholder icon for Notion -->
+                                    <b>LinkTree</b>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4 col-xs-12">
+                    <img class="img-responsive" src="img/projects/cl.png" style="width: 300px; height: 140px;" alt="">
+                </div>
+                <div class="col-sm-8 col-xs-12">
+                    <div class="pubt"><strong>Continual Learning Survey</strong></div>
+                    <div class="pubv"><b>2022</b> </div>
+                    These slides and notion database partially covers the classical and SOTA methods in continual learning and its drawbacks till 2022.
+
+                    <div class="publ_">
+                        <ul style="list-style-type: none; padding: 0;">
+                            <li style="margin-bottom: 10px;">
+                                <a href="https://docs.google.com/presentation/d/1l_O9qThYFHkLAaoYyAB4Et7UxxGGsvF3D8gcSbEH6Ls/edit?usp=sharing" target="_blank" class="button google-slides">
+                                    <i class="fab fa-google icon"></i>
+                                    <b>Slides</b>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://oceanic-antler-eb0.notion.site/113a771fb39c80f18251c3091f4f192a?v=113a771fb39c815782cb000c67af58ab" target="_blank" class="button notion">
+                                    <i class="fas fa-sticky-note icon"></i> <!-- Placeholder icon for Notion -->
+                                    <b>Notion</b>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+
+
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-4 col-xs-12">
+                    <img class="img-responsive" src="img/projects/LLM planner.png" style="width: 300px; height: 140px;" alt="">
+                </div>
+                <div class="col-sm-8 col-xs-12">
+                    <div class="pubt"><strong>Embodiement Agent (TAMP with LLM) Mini Survey and proposed strategy</strong></div>
+                    <div class="pubv"><b>2022</b> </div>
+                    These slides and notion database partially covers the embodied agent and Evaluation metrics used in TAMP along with a proposed strategy consisting of Instruction Planner, Coder for debug analysis, and Skill Handler to optimize actions. It learns from execution feedback, continuously improving performance through reflection and memory management.
+
+
+                    <div class="publ_">
+                        <ul style="list-style-type: none; padding: 0;">
+                            <li style="margin-bottom: 10px;">
+                                <a href="https://docs.google.com/presentation/d/1ppk0cnIqiQhhx0jARil2j1jLPSAShffTaBfjwhznLb8/edit?usp=sharing" target="_blank" class="button google-slides">
+                                    <i class="fab fa-google icon"></i>
+                                    <b>Slides</b>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://oceanic-antler-eb0.notion.site/f7e79139232c49c896540f515f38893e?v=c559a2753a7b40a8903a21ffb2a485f1" target="_blank" class="button notion">
+                                    <i class="fas fa-sticky-note icon"></i> <!-- Placeholder icon for Notion -->
+                                    <b>Notion</b>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-4 col-xs-12">
+                    <img class="img-responsive" src="img/projects/iisc_mimic.png" style="width: 300px; height: 140px;" alt="">
+                </div>
+                <div class="col-sm-8 col-xs-12">
+                    <div class="pubt"><strong>MIMIC multimodality and contrastive learning Survey</strong></div>
+                    <div class="pubv"><b>2022</b> </div>
+                    Survey on multimodality and contrastive learning methods in MIMIC (III, IV) and similar dataset along with SOTA models available in each modalities such as CXR, EHR, ECG and Notes.
+           
+                    <div class="publ_">
+                        <ul style="list-style-type: none; padding: 0;">
+                            <li style="margin-bottom: 10px;">
+                                <a href="https://oceanic-antler-eb0.notion.site/1c6ae01d802f44d4aa1c4bafe6f3d4a2?v=0198cff002b34f94ac6bce016294b0ad"  target="_blank" class="button notion">
+                                    <i class="fas fa-sticky-note icon"></i> <!-- Placeholder icon for Notion -->
+                                    <b>Notion</b>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://oceanic-antler-eb0.notion.site/SOTA-models-963b2664d0894f6bb0f09d6a12242704?pvs=4" target="_blank" class="button notion">
+                                    <i class="fas fa-sticky-note icon"></i> <!-- Placeholder icon for Notion -->
+                                    <b>Notion (SOTA)</b>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
 
 
 

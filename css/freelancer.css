@@ -545,6 +545,21 @@ footer .footer-below {
     display: inline-block;
 }
 
+.publ_ {
+    padding-top: 10px;
+}
+.publ_ ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.publ_ li {
+    padding: 5px;
+    margin: 5px 2px;
+    display: inline-block;
+}
+
+
 .band {
     margin: 0 auto;
     max-width: 1170px;
