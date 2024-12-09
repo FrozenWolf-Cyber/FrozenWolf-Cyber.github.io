@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Be My ASSistant: Exploring LLM Empowered Interactive Surgical Assistant for Surgical Sub-Task Automation</title>
+
+    <link rel="shortcut icon" href="./img/logos/terminal.png" />
+
+
+<!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+  <!-- <link rel="icon" type="image/png" href="img/seal_icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-52J0PM8XKV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-52J0PM8XKV');
+</script>
+	
+    <style>
+        .nav-pills {
+          position: relative;
+          display: inline;
+        }
+        .imtip {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b><font size="+6">Be My ASSistant</font></b>: </br> Exploring LLM Empowered Interactive Surgical Assistant for Surgical Sub-Task Automation </br> 
+                <!--<small>
+                    CoRL 2021
+                </small>-->
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                <br>
+
+                <li>Gokul Adethya T</li><li>Lalithkumar Seenivasan</li><li>Ashwin Krishna Kumar</li><li>Mobarakol Islam</li><li>Hongliang Ren</li>
+
+                <br><br>
+                <a href="https://frozenwolf-cyber.github.io/" style="color:rgb(6, 83, 215);">
+                <image src="./img/logos/terminal.png" height="40px"> <u>Gokul Adethya</u></a>
+                
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <!-- <li>
+                            <a href="assets/palm_saycan.pdf">
+                            <image src="img/paper_small.png" height="60px">
+                            <image src="img/new.png" height="20px" class="imtip">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li> -->
+
+                        <!-- <li>
+                            <a href="https://youtu.be/ysFav0b472w">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://ai.googleblog.com/2022/08/towards-helpful-robots-grounding.html">
+                            <image src="img/google-ai-blog-small.png" height="60px">
+                                <image src="img/new.png" height="20px" class="imtip">
+                                <h4><strong>Blogpost</strong></h4>
+                            </a>
+                        </li>
+                         <li>
+                            <a href="https://github.com/google-research/google-research/tree/master/saycan">
+                            <image src="img/github.png" height="60px">
+                                <image src="img/new.png" height="20px" class="imtip">
+                                <h4><strong>Code</strong></h4>
+                            </a> -->
+                            <li>
+                            <!-- <a href="https://sites.research.google/palm-saycan">
+                            <image src="img/demo.png" height="60px">
+                                <image src="img/new.png" height="20px" class="imtip">
+                                <h4><strong>Demo</strong></h4>
+                            </a> -->
+                        </li> 
+                        </li> 
+                    </ul>
+                </div>
+        </div>
+
+
+        
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <!-- <p style="text-align:center;">
+        	    	<video id="v0" width="100%" playsinline autoplay muted loop controls>
+                       <source src="img/demo_sequence_compressed.mp4" type="video/mp4">
+                   </video>
+                </p> -->
+
+
+                <div style="display: flex; justify-content: center; gap: 10px;" >
+                    <video style="height: 40vh; width: auto;" playsinline autoplay muted loop>
+                        <source src="img/surrol.mp4" type="video/mp4">
+                    </video>
+                
+                    <video style="height: 40vh; width: auto;" playsinline autoplay muted loop>
+                        <source src="img/lapgym1.mp4" type="video/mp4">
+                    </video>
+                
+                    <video style="height: 40vh; width: auto;" playsinline autoplay muted loop>
+                        <source src="img/lapgym2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                
+
+                <h3>
+                    Abstract
+                </h3>
+
+                
+
+                <p class="text-justify"> 
+                    In this work, we introduce MASS, a novel large language model (LLM)-driven framework for surgical task and motion planning. MASS is designed to interpret high-level natural language surgical instructions and convert them into precise robotic actions, capable of operating in both single-arm (task 1, task 3) and dual-arm (task 2) setups. We evaluate this framework in two different simulation environments, Lapgym and Surrol, leveraging a unified skill library that allows for flexibility, scalability, and adaptability across various hospital settings and robotic systems. MASS seamlessly generalizes across different surgical configurations, including systems with varied control architectures. A key strength of MASS lies in its ability to disentangle the LLM's high-level decision-making from the system-specific actuation sequences, making the overall planning and execution process more transparent and interpretable. This separation ensures that the LLM focuses on action prediction, while the execution remains tailored to the specific robotic setup, enhancing both clarity and efficiency in surgical task planning.
+             <p style="text-align:center;">
+        	    	<!-- <video id="v0" width="100%" playsinline autoplay muted loop controls>
+                       <source src="img/palm_saycan_teaser_compressed.mp4" type="video/mp4">
+                   </video> -->
+
+                   <p style="text-align:center; padding-top: 7%; "></p>
+                    <image src="img/internal.jpg" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1.4); transform-origin: center;"></image>
+                    </p>
+                    
+                </p>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+            	<br>
+                <h3>
+                    Approach
+                </h3>
+                <p class="text-justify">
+
+
+                    <p>The MASS setup involves an embodied robotic agent tasked with executing high-level natural language surgical instructions. This agent can access <i>k</i> short-horizon skills across <i>s</i> surgical setups from a library of pre-trained policies <i>&pi;<sub>k</sub><sup>s</sup> &isin; &Pi;</i> trained using Reinforcement Learning and Imitation Learning. The common skills between tasks are mapped under common primitives with the textual label <i>l(&pi;<sub>k</sub><sup>s</sup>)</i> and chosen based on the tasks present. A pre-trained LLM acts as the "planner" responsible for determining a sequence of these skills to fulfill the given instruction.</p>
+
+                    <p>The planner can access textual feedback from the environment, including action status and passive feedback about object states (inner monologue style). This feedback can be procedurally generated using object recognition and image captioning methods or replaced with a human in the loop. Unlike inner monologue, we currently do not use active feedback (e.g., VQA). Instead, humans control actions and adapt instructions based on requirements.</p>
+                    
+                    <p>The planner has the following phases:</p>
+                    <ol>
+                        <li>Filtering and CoT</li>
+                        <li>Action scoring and choosing strategy</li>
+                        <li>Execution</li>
+                    </ol>
+                    
+                <p style="text-align:center; padding-top: 10%;"></p>
+        	    <image src="img/architecture.jpg" class="img-responsive"class="img-responsive" style="max-width: 100%; transform: scale(1.4); transform-origin: center;"></image>
+                </p>
+                <br><br> <br><br>
+
+                This setup consists of three tasks utilizing both Lapgym and Surrol environments. The configurations are as follows:
+
+<ul>
+    <li>
+      <strong>Task 1: 1 Armed - Retract the Tissue</strong> <br>
+      The setup contains an end-effector and a tissue. The agent needs to detect the location of the tissue, reach, grab, and then retract it.
+    </li>
+  
+    <li>
+      <strong>Task 2: 2 Armed - Retract the Tissue and Reach the Tumor</strong> <br>
+      This setup supersets Task 1 and has an extra end-effector to reach the tumor and a tumor below the tissue. After completing the retraction similar to Task 1, the agent needs to perform detection to check if the tumor has been revealed and then reach it.
+    </li>
+  
+    <li>
+      <strong>Task 3: 1 Armed - Cover the Blood with Gauze</strong><br>
+      The scene has 2 gauze in a tray and a blood patch lying on top of the tissue, which is on a table. The assistant is supposed to detect the gauze and blood and perform a pick-and-place operation to complete the instruction. If both gauze fail to be picked, a new gauze can be further requested.
+    </li>
+  </ul>
+  
+  <p style="text-align:center;">
+    <image src="img/nus_results/skill.png" class="img-responsive">
+    </p>
+
+
+  Different LLM planner setups:
+
+  <ul>
+    <li><strong>SayCAN (Open Loop):</strong> Resembles SayCan but without filtering or CoT phases. The model receives the initial instruction, scene description, and past actions. Detection is triggered initially since the LLM operates in an open loop and cannot update during execution. All action permutations are predefined.</li>
+    
+    <li><strong>SayCAN with Scene Update (Closed Loop):</strong> Builds on the open-loop strategy by updating the scene description and history after each step. The action status remains hidden. Action permutations grow as new states and objects are discovered.</li>
+    
+    <li><strong>SayCAN with Scene and Action Status Update (Inner Monologue):</strong> Extends the closed-loop strategy by also updating the action status, resembling the Inner Monologue setup.</li>
+    
+    <li><strong>SayCAN with Scene and Action Status Update and Action Filtering + CoT:</strong> Expands on the Inner Monologue setup by adding CoT and top-5 action filtering. The model generates thoughts and selects the top 5 logical actions in one step. Only valid options among these actions are used, making the process more efficient and interpretable.</li>
+</ul>
+
+
+
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Results
+                </h3>
+
+
+        
+                
+		<p class="text-justify">
+            <h3>Task 3: 1-Arm Gauze Pick-and-Place on Blood Setup</h3>
+
+            <p>
+            In the <strong>1-Arm Gauze Pick-and-Place on Blood Setup</strong>, the primary task is to identify the gauze and the blood patch, and then perform a successful pick-and-place operation to cover the blood with the gauze. Several types of failures were observed under different conditions:
+            </p>
+            
+            <ul>
+              <li>
+                <strong>Object_scene_status</strong>: A notable failure occurs when the system forgets to release the gauze after successfully reaching the target location. This prevents task completion even though the initial stages were successful.
+              </li>
+              <li>
+                <strong>Object_scene</strong>: The agent sometimes fails to reach the gauze before attempting to grab it, making the gauze unpickable. Additionally, it fails to detect when the gauze has not been picked up and proceeds with the place operation as if the pick was successful.
+              </li>
+              <li>
+                <strong>Object_nly</strong>: When the scene is not updated during execution, the agent does not recognize that the gauze is unpickable, leading to repeated failed pick attempts.
+              </li>
+              <li>
+                <strong>Temperature Sensitivity</strong>: Under certain conditions, such as when the temperature parameter is set to 2, the system consistently fails to execute the task correctly.
+              </li>
+            </ul>
+            
+            <hr>
+		</p>
+		
+        <p style="text-align:center;">
+            <img src="img/nus_results/task 3.png" class="img-responsive">
+        </p>
+
+
+		<p class="text-justify">
+			
+		</p>
+		    
+        <!-- <p style="text-align:center;">
+            <video id="v0" style="width: 45vw; height: auto;" playsinline autoplay muted loop>
+                <source src="img/surrol.mp4" type="video/mp4">
+            </video>
+        </p> -->
+        
+        <p style="text-align:center; padding-top: 7%;"></p>
+            <img src="img/saycan_results_page-0001.jpg" class="img-responsive" style="max-width: 100%; transform: scale(1.4); transform-origin: center;">
+        </p>
+        
+
+        <h3  style="padding-top: 15%;"></p>Task 1: 1-Arm Tissue Retract Setup</h3>
+
+<p>
+In the <strong>1-Arm Tissue Retract Setup</strong>, the task requires detecting, reaching, grabbing, and retracting the tissue. Observations indicate partial failures under specific strategies:
+</p>
+
+<ul>
+  <li>
+    <strong>Object_nly and Object_scene</strong>: The agent assumes that the tissue needs to be released immediately after the retraction step. While the retraction is successful, the premature release results in only a partial success for the task.
+  </li>
+</ul>
+
+<hr>
+
+
+        <p style="text-align:center; padding-top: 0%;"></p>
+            <img src="img/nus_results/task 1.png" class="img-responsive">
+        </p>
+
+        <p style="text-align:center; padding-top: 7%;"></p>
+        <img src="img/lapgym_1_results_page-0001.jpg" class="img-responsive" style="max-width: 100%; transform: scale(1.4); transform-origin: center;">
+    </p>
+    
+
+
+        <p class="text-justify"  style=" padding-top: 10%;">
+			<h3>Task 2: 2-Arm Tumor Retract Setup</h3>
+
+<p>
+The <strong>2-Arm Tumor Retract Setup</strong> extends the previous task by introducing a tumor that needs to be reached after retracting the tissue. Failures in this task highlight issues related to coordination and scene understanding:
+</p>
+
+<ul>
+  <li>
+    <strong>Object_scene</strong>: The agent frequently tries to reach the tumor using the same arm (arm0) that is responsible for the tissue retraction, causing the task to fail. In some cases, it retries this approach multiple times before halting due to a lack of action status updates. Additionally, the agent may attempt to detect the tumor before retracting the tissue or assume that the tumor needs to be grabbed rather than reached.
+  </li>
+  <li>
+    <strong>Object_scene_status</strong>: Similar to the previous case, the agent attempts to detect the tumor without completing the tissue retraction, leading to failure.
+  </li>
+  <li>
+    <strong>Object_nly</strong>: When the scene is not dynamically updated, the agent cannot detect the tumor's position, making it impossible to complete the task.
+  </li>
+  <li>
+    <strong>CoT_object_scene_status</strong>: Even with Chain-of-Thought (CoT) reasoning, the agent sometimes mistakenly assumes the tumor needs to be grabbed after reaching it, resulting in task failure.
+  </li>
+</ul>
+
+		</p>
+        
+        <!-- <p style="text-align:center;">
+            <video id="v0" style="width: 45vw; height: auto;" playsinline autoplay muted loop>
+                <source src="img/lapgym1.mp4" type="video/mp4">
+            </video>
+        </p> -->
+        
+    
+
+
+        <p style="text-align:center; padding-top: 2%;"></p>
+            <img src="img/nus_results/task 2.png" class="img-responsive">
+        </p>
+  
+
+<!-- <p style="text-align:center;">
+    <video id="v0" style="width: 45vw; height: auto;" playsinline autoplay muted loop>
+        <source src="img/lapgym2.mp4" type="video/mp4">
+    </video>
+</p> -->
+
+<p style="text-align:center; padding-top: 7%;"></p>
+        <image src="img/lapgym_2_results_page-0001.jpg"  class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1.1); transform-origin: center;"></image>>
+        </p>	
+
+		
+
+
+
+
+		
+
+               
+	    </div>
+        </div>
+            
+       
+
+
+
+
+         <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation 
+                </h3> <a href="">[arxiv version]</a>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@inproceedings{
+    lorem ipsum
+}</textarea>
+                </div>
+            </div>
+             
+        </div>
+
+
+
+    </div>
+</body>
+</html>

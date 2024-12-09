@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>SaSi: A Self-augmented and Self-Interpreted Deep-Learning Approach for Few-shot Cryo-ET Particle Detection</title>
+
+    <link rel="shortcut icon" href="./img/logos/terminal.png" />
+
+
+<!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+  <!-- <link rel="icon" type="image/png" href="img/seal_icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-52J0PM8XKV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-52J0PM8XKV');
+</script>
+	
+    <style>
+        .nav-pills {
+          position: relative;
+          display: inline;
+        }
+        .imtip {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b><font size="+6">SaSi</font></b>: </br> A Self-augmented and Self-Interpreted Deep-Learning Approach for Few-shot Cryo-ET Particle Detection </br> 
+                <!--<small>
+                    CoRL 2021
+                </small>-->
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                <br>
+                <li>Gokul Adethya T</li><li>Bhanu Pratyush Mantha</li><li>Tianyang Wang</li><li>Xingjian Li</li><li>Min Xu</li>
+
+                <br><br>
+                    <a href="https://frozenwolf-cyber.github.io/" style="color:rgb(6, 83, 215);">
+                    <image src="./img/logos/terminal.png" height="40px"> <u>Gokul Adethya</u></a>
+                    
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="img/projects/cmu/transcript.pdf">
+                            <image src="img/paper_small.png" height="60px">
+                            <!-- <image src="img/new.png" height="20px" class="imtip"> -->
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+
+                        <!-- <li>
+                            <a href="https://youtu.be/ysFav0b472w">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://ai.googleblog.com/2022/08/towards-helpful-robots-grounding.html">
+                            <image src="img/google-ai-blog-small.png" height="60px">
+                                <image src="img/new.png" height="20px" class="imtip">
+                                <h4><strong>Blogpost</strong></h4>
+                            </a>
+                        </li> -->
+                         <li>
+                            <a href="https://wandb.ai/frozenwolf/semi-self%20supervised%20fewshot/reports/Enhancing-Few-Shot-Detection-with-Weak-Labels-A-Self-Supervised-Learning-and-Augmix-Approach-in-Cryo-ET--Vmlldzo5MTE3MDk4">
+                            <image src="img/wandb.png" height="60px">
+                                <!-- <image src="img/new.png" height="20px" class="imtip"> -->
+                                <h4><strong>WanDB Report</strong></h4>
+                            </a>
+                            <li>
+                            <!-- <a href="https://sites.research.google/palm-saycan">
+                            <image src="img/demo.png" height="60px">
+                                <image src="img/new.png" height="20px" class="imtip">
+                                <h4><strong>Demo</strong></h4>
+                            </a> -->
+                        </li> 
+                        </li> 
+                    </ul>
+                </div>
+        </div>
+
+
+        
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <!-- <p style="text-align:center;">
+        	    	<video id="v0" width="100%" playsinline autoplay muted loop controls>
+                       <source src="img/demo_sequence_compressed.mp4" type="video/mp4">
+                   </video>
+                </p> -->
+
+
+                <p style="text-align:center;"></p>
+                <image src="img/projects/cmu/all.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                </p>
+
+                <h3>
+                    Abstract
+                </h3>
+
+                
+
+                <p class="text-justify"> 
+                    Cryo-electron tomography (cryo-ET) has emerged as a powerful technique for imaging macromolecular complexes in their near-native states. However, the localization of 3D particles in cellular environments still presents a significant challenge due to low signal-to-noise ratios and missing wedge artifacts. Deep learning approaches have shown great potential, but they need huge amounts of data, which can be a challenge in cryo-ET scenarios where labeled data is often scarce. In this paper, we propose a novel Self-augmented and Self-interpreted (SaSi) deep learning approach towards few-shot particle detection in 3D cryo-ET images. Our method builds upon self-augmentation techniques to further boost data utilization and introduces a self-interpreted segmentation strategy for alleviating dependency on labeled data, hence improving generalization and robustness. As demonstrated by experiments conducted on both simulated and real-world cryo-ET datasets, the SaSi approach significantly outperforms existing state-of-the-art methods for particle localization, demonstrating its compatibility with model architectures ranging from CNNs to Vision Transformers (ViT). This research increases understanding of how to detect particles with very few labels in cryo-ET and thus sets a new benchmark for few-shot learning in structural biology.
+                    <p style="text-align:center;">
+        	    	<!-- <video id="v0" width="100%" playsinline autoplay muted loop controls>
+                       <source src="img/palm_saycan_teaser_compressed.mp4" type="video/mp4">
+                   </video> -->
+
+                    
+                </p>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+            	<br>
+                <h3>
+                    Approach
+                </h3>
+                <p class="text-justify">
+
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/cmu/sample.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+
+
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/cmu/augmix.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+
+                    <h4>Sampling</h4>
+                    <p>Tomograms are divided into smaller <b>W × W × W</b> subvolumes, with window sliding to reduce boundary information loss. Samples are centered on <b>particle centroids</b>, balanced by particle type, and augmented with <b>spatial transformations</b>. Weak point labels are converted to pseudo-strong labels via spheres.</p>
+                
+
+                    <h4>Post Processing</h4>
+                    <p>Voxel-wise classification is obtained using an <b>arg max</b> operation on the model output. We apply <b>3D connected components (cc3d)</b> with 26-connectivity, which proves reliable in few-shot settings and requires <b>no hyperparameter tuning</b>. <b>cc3d</b> outperforms <b>Meanshift</b> and <b>MP-NMS</b> post-processing strategies from Deepfinder and DeepETpicker, making it a strong baseline for these methods.</p>
+                    
+                    <h4>Augmix</h4>
+                    <p><b>AugMix enhances generalization</b> by generating augmented particles and increasing volumetric density in cryo-ET images. Only <b>random shifting, rotation, and flipping</b> are applied to prevent structural distortion. Multiple augmented variants are mixed using a <b>Dirichlet-weighted sum</b>, combined with the original image via <b>skip connections</b>, and the resulting ground truth masks are generated using the <b>arg max</b> operation.</p>
+                    
+
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/cmu/comb.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+            
+
+                    <h4>Self-Supervised</h4>
+                    <p>We apply <b>contrastive learning</b> with SimCLR and <b>NT-Xent Loss</b> to learn general cryo-ET features. Augmented variants are encoded and projected to <b>128-dimensional vectors</b>, optimizing similarity for pairs and minimizing it for different samples. We use two configurations: <b>Periodic Self-Supervision (PSS)</b> and <b>Initial Self-Supervision (ISS)</b>. Self-supervised learning enhances feature extraction, transitioning to supervised learning for <b>task-specific adaptation</b>.</p>
+                    
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/cmu/t3-model.png" class="img-responsive" class="img-responsive" style="max-width: 50%; transform: scale(1); transform-origin: center;"></image>
+                  </p>
+                  <p style="text-align:center;"></p>
+                  <image src="img/projects/cmu/model.png" class="img-responsive" class="img-responsive" style="max-width: 80%; transform: scale(1); transform-origin: center;"></image>
+                  </p>
+                  
+                  
+
+                    <h4>Self-Interpreted Image Segmentation</h4>
+                    <p>This method trains segmentation models <b>without ground truth masks</b> by enforcing consistency between predictions and spatially transformed inputs. Given an input and its transformed variant, the model learns to align their segmentation maps. This approach applies to both <b>supervised and self-supervised</b> phases, covering <b>encoder and decoder</b> learning. The model's ability to maintain consistent segmentation under transformations indicates <b>structural understanding</b>.</p>
+
+
+
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Results
+                </h3>
+
+
+        
+                <h4>
+                    Post-Processing
+                </h4>
+
+		<p class="text-justify">
+            cc3d performed consistently better than other post processing which could be due to other post processing overly reliant on better model’s base predictions. 
+            And cc3d requires no parameter tuning.
+		</p>
+		
+        <p style="text-align:center;"></p>
+            <image src="img/projects/cmu/t1.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+        </p>
+
+        <h4>
+            SaSi on real-world dataset
+        </h4>
+        <p class="text-justify">
+            SaSi shows more improvement in SHREC dataset compared to Real world dataset where it still remains challenging.
+
+		</p>
+
+        <p style="text-align:center;"></p>
+        <image src="img/projects/cmu/t2.png" class="img-responsive" class="img-responsive" style="max-width: 70%; transform: scale(1); transform-origin: center;"></image>
+    </p>
+
+    <h4>
+        AugMix Performance
+    </h4>
+    <p class="text-justify">
+        <h5>For N = 3:</h5>
+        <ul>
+          <li>AugMix performs worse than baselines across models.</li>
+          <li>Limited training samples increase uncertainty and distort information.</li>
+        </ul>
+      
+        <h5>For N = 5, 10:</h5>
+        <ul>
+          <li>Significant performance improvement with AugMix.</li>
+          <li>Robustness of AugMix becomes evident.</li>
+        </ul>
+    </p>
+
+    <p style="text-align:center;"></p>
+    <image src="img/projects/cmu/t4.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+    </p>
+
+    <h4>
+        Self-Supervised Learning
+    </h4>
+
+    <p class="text-justify">
+        <ul>
+            <li>Performance Trends: SSL combined with AugMix generally enhances performance across models, except for DeepETPicker, which exhibits anomalous behavior. It could be due to high parameter count causing faster overfitting.
+
+            <li>SSL Effectiveness: SSL aids in learning robust representations by leveraging intrinsic data properties, reducing label biases, and improving performance for imbalanced classes.
+            
+                <li>PSS Advantages: PSS effectively integrates SSL and supervised learning, mitigating overfitting through comprehensive use of tomograms.
+
+                    <li>ISS Simplicity: ISS simplifies implementation by using fixed SSL steps and generally performs better with increased SSL steps, avoiding hyperparameter tuning (periodicity related parameters).
+        
+                        <li>Challenges: ISS outperforms PSS by avoiding complex tuning, though it depends on AugMix and consistency loss for robustness since supervised learning component can still induce overfitting.
+                       
+            </ul>
+            </p>
+
+ 
+
+    <p style="text-align:center;"></p>
+    <image src="img/projects/cmu/t5.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+    </p>
+
+    <h4>
+        Consistency 
+    </h4>
+
+	<p class="text-justify">
+        <ul>
+            <li>Consistency Loss Complementarity: Consistency loss complements AugMix, PSS, and ISS, enhancing performance with minimal trade-offs.
+
+                <li>AugMix Improvement: Consistency loss significantly improves AugMix's performance for small sample sizes (e.g., N = 3), addressing prior shortcomings.
+
+                    <li>Combination Benefits: The combination of self-interpreted learning, AugMix, and SSL yields notable improvements, suggesting consistency mechanisms provide effective regularization for better generalization but still remains a bit unstable.
+                    </ul>
+                    </p>
+
+
+    <p style="text-align:center;">
+    <image src="img/projects/cmu/t6.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+    </p>
+
+    <h3> WanDB Report </h3>
+    <br>
+    <iframe src="https://wandb.ai/frozenwolf/semi-self%20supervised%20fewshot/reports/Enhancing-Few-Shot-Detection-with-Weak-Labels-A-Self-Supervised-Learning-and-Augmix-Approach-in-Cryo-ET--Vmlldzo5MTE3MDk4" style="border:none;height:1024px;width:100%"></iframe>
+    
+
+               
+	    </div>
+        </div>
+            
+       
+
+
+
+
+         <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation 
+                </h3> <a href="">[arxiv version]</a>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@inproceedings{
+    lorem ipsum
+}</textarea>
+                </div>
+            </div>
+             
+        </div>
+
+
+
+    </div>
+</body>
+</html>
