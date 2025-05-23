@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>A Study on Regularization-Based Continual Learning Methods for Indic ASR</title>
+
+    <link rel="shortcut icon" href="./img/logos/terminal.png" />
+
+
+<!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+  <!-- <link rel="icon" type="image/png" href="img/seal_icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+    <script src="js/app.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-52J0PM8XKV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-52J0PM8XKV');
+</script>
+	
+    <style>
+        .nav-pills {
+          position: relative;
+          display: inline;
+        }
+        .imtip {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b>Continual Learning for Robust Video Segmentation of Robot-Assisted Surgical Tool</b> 
+                <!--<small>
+                    CoRL 2021
+                </small>-->
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                <br>
+                <!-- <li>Gokul Adethya T</li><li>Bhanu Pratyush Mantha</li><li>Tianyang Wang</li><li>Xingjian Li</li><li>Min Xu</li> -->
+
+                <br><br>
+                    <a href="https://frozenwolf-cyber.github.io/" style="color:rgb(6, 83, 215);">
+                    <image src="./img/logos/terminal.png" height="40px"> <u>Gokul Adethya</u></a>
+                    
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <!-- <a href="img/projects/cmu/transcript.pdf"> -->
+                            <image src="img/paper_small.png" height="60px">
+                            <!-- <image src="img/new.png" height="20px" class="imtip"> -->
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+
+                        <!-- <li>
+                            <a href="https://youtu.be/ysFav0b472w">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://ai.googleblog.com/2022/08/towards-helpful-robots-grounding.html">
+                            <image src="img/google-ai-blog-small.png" height="60px">
+                                <image src="img/new.png" height="20px" class="imtip">
+                                <h4><strong>Blogpost</strong></h4>
+                            </a>
+                        </li> -->
+                         <li>
+                            <a href="https://wandb.ai/frozenwolf/CL-SAM2/reports/CL-for-Robust-Video-Segmentation-of-Surgical-Tool--VmlldzoxMjkwMTg5OQ">
+                            <image src="img/wandb.png" height="60px">
+                                <!-- <image src="img/new.png" height="20px" class="imtip"> -->
+                                <h4><strong>WanDB Report</strong></h4>
+                            </a>
+                            <li>
+                            <!-- <a href="https://sites.research.google/palm-saycan">
+                            <image src="img/demo.png" height="60px">
+                                <image src="img/new.png" height="20px" class="imtip">
+                                <h4><strong>Demo</strong></h4>
+                            </a> -->
+                        </li> 
+                        </li> 
+                    </ul>
+                </div>
+        </div>
+
+
+        
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <!-- <p style="text-align:center;">
+        	    	<video id="v0" width="100%" playsinline autoplay muted loop controls>
+                       <source src="img/demo_sequence_compressed.mp4" type="video/mp4">
+                   </video>
+                </p> -->
+
+                <p style="text-align:center;"></p>
+                <image src="img/projects/cl-sam/2.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                </p>
+             
+                <h3>
+                    Abstract
+                </h3>
+
+                
+
+                <p class="text-justify"> 
+                    <p>
+                        Robust identification and segmentation of surgical tools in robot-assisted procedures are critical for safeguarding patient safety and driving progress toward fully automated surgeries. However, deep learning models often fail to handle challenging visual conditions of real-world surgical scenes, including distortions like over-bleeding, smoke, and low illumination. Conventional training on limited, high-quality data makes adaptation to diverse surgical conditions difficult, with standard approaches often causing catastrophic forgetting and violating privacy due to the need for sensitive historical data. We propose a new framework that unifies Domain-Incremental Continual Learning (CL) to achieve robust surgical tool segmentation while preserving data privacy across evolving domains. Our approach utilizes the Segment Anything Model 2 (SAM2) as a baseline, employing parameter-efficient Low-Rank Adaptation (LoRA) to facilitate adaptation within the CL framework. This enables sequential, privacy-preserving learning across domains and mitigates forgetting. We evaluate our methodology on challenging endoscopic video datasets containing various distortions, measuring performance using standard segmentation metrics (mIoU, DSC) and assessing knowledge retention via forgetting analysis. Our results demonstrate that the K-Means based CL method achieves high performance across several learned domains, presenting a significant advancement towards reliable, adaptable, and privacy-conscious computer vision systems for real-world surgical applications.
+
+                    </p>
+                          <p style="text-align:center;">
+        	    	<!-- <video id="v0" width="100%" playsinline autoplay muted loop controls>
+                       <source src="img/palm_saycan_teaser_compressed.mp4" type="video/mp4">
+                   </video> -->
+
+                    
+                </p>
+            </div>
+        </div>
+
+
+
+
+        <p style="text-align:center;"></p>
+        <image src="img/projects/cl-sam/7.png" class="img-responsive" class="img-responsive" style="max-width: 50%; transform: scale(1); transform-origin: center;"></image>
+        </p>
+        <p style="text-align:center;"></p>
+        <image src="img/projects/cl-sam/3.png" class="img-responsive" class="img-responsive" style="max-width: 50%; transform: scale(1); transform-origin: center;"></image>
+        </p>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+            	<br>
+
+                <p class="text-justify">
+                    <h3>Methodology</h3>
+
+                    <h4>Domain Identification and Adaptive LoRA Loading (K-Means + CLIP)</h4>
+                    
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/cl-sam/4.png" class="img-responsive" class="img-responsive" style="max-width: 70%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+
+                    <p>
+                      Instead of adapting a single set of parameters over time, this method trains 
+                      <strong>individual LoRA adapters</strong> for each domain encountered during the learning phase. 
+                      During inference, the <strong>domain of the input video</strong> is first identified using 
+                      <strong>CLIP embeddings and K-Means clustering</strong>, and the corresponding adapter is loaded 
+                      into the base segmentation model for inference.
+                    </p>
+                    
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/cl-sam/8.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+
+                    <h5>Training Phase:</h5>
+                    <ul>
+                      <li>Each domain gets a dedicated LoRA adapter trained independently.</li>
+                      <li>Initialization can either be random or derived from the previous domain's adapter.</li>
+                      <li>The segmentation loss is optimized per domain.</li>
+                      <li>Optional <strong>knowledge distillation</strong> uses the previous domain’s adapter as a teacher.</li>
+                      <li>Each trained adapter is stored separately, preserving domain-specific expertise.</li>
+                    </ul>
+                    
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/cl-sam/9.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+
+                 
+                    <h5>Inference Phase:</h5>
+                    <ul>
+                      <li>Frame-level embeddings are extracted using a <strong>pre-trained CLIP model</strong>.</li>
+                      <li>Embeddings are averaged per video and clustered to compute <strong>domain anchor embeddings</strong>.</li>
+                      <li>A test sequence’s embedding is matched to the closest anchor.</li>
+                      <li>The <strong>corresponding LoRA adapter</strong> is dynamically loaded into the model.</li>
+                    </ul>
+                    
+                    <p>
+                      This approach transforms the challenge of continual learning into a 
+                      <strong>domain recognition and parameter selection problem</strong>, offering robustness to domain shifts 
+                      and avoiding typical drawbacks of shared-parameter models.
+                    </p>
+                    
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/cl-sam/5.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+
+
+                    <h3>Observations</h3>
+
+
+                    <h4>Continual Learning Strategy Evaluation and Forgetting Analysis</h4>
+                    
+                    <p>
+                      The core challenge in continual learning is <strong>catastrophic forgetting</strong>, where the model degrades 
+                      on earlier domains after learning new ones. To assess this, performance metrics like 
+                      <strong>mean Dice Similarity Coefficient (DSC)</strong> and <strong>IoU</strong> were tracked across domains 
+                      as new ones were added in sequence:
+                    </p>
+                    <p><em>Smoke → Blood → Low Brightness → Background Change → Regular</em></p>
+                    
+                                        
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/cl-sam/6.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+
+                    <h5>Key Findings:</h5>
+                    
+                    <h6>1. Naive Sequential Fine-tuning</h6>
+                    <ul>
+                      <li>Exhibited <strong>significant forgetting</strong>, especially on early domains.</li>
+                      <li>Example: Performance on Smoke dropped by <strong>-0.27</strong> after Background Change training.</li>
+                      <li>Adapts well to recent domains but often <strong>overfits</strong>, hurting generalization.</li>
+                      <li>Shows minimal forward knowledge transfer to new tasks.</li>
+                    </ul>
+                    
+                    <h6>2. Learning without Forgetting (LwF)</h6>
+                    <ul>
+                      <li>Demonstrated <strong>better retention</strong> than the Naive baseline.</li>
+                      <li>Example: Forgetting on Smoke was reduced to <strong>-0.106</strong>.</li>
+                      <li>Uses distillation to maintain old knowledge but may slow new domain adaptation.</li>
+                    </ul>
+                    
+                    <h6>3. K-Means + CLIP Adapter Selection (KM)</h6>
+                    <ul>
+                      <li>Showed <strong>the least forgetting</strong>, with scores often near zero or slightly positive.</li>
+                      <li>Example: <strong>+0.021 on Smoke</strong> after Low Brightness training.</li>
+                      <li>Uses <strong>separate adapters</strong> for each domain, preventing knowledge overwriting.</li>
+                      <li>Exhibits better <strong>forward generalization</strong> due to CLIP-guided adapter selection.</li>
+                    </ul>
+                    
+                    <p>
+                      This strategy uses <strong>domain-aware inference</strong> to maintain high performance across tasks 
+                      and avoids the instability of sequential fine-tuning approaches.
+                    </p>
+                    
+                   </p>
+                      
+
+
+
+  
+  
+
+
+    <h3> WanDB Report </h3>
+    <br>
+    <iframe src="https://wandb.ai/frozenwolf/CL-SAM2/reports/CL-for-Robust-Video-Segmentation-of-Surgical-Tool--VmlldzoxMjkwMTg5OQ" style="border:none;height:1024px;width:100%">
+	    </div>
+        </div>
+            
+       
+
+
+
+
+         <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation 
+                </h3> <a href="">[arxiv version]</a>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@inproceedings{
+    lorem ipsum
+}</textarea>
+                </div>
+            </div>
+             
+        </div>
+
+
+
+    </div>
+</body>
+</html>

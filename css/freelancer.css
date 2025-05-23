@@ -48,6 +48,10 @@ hr.light {
     border-color: #10245E;
 }
 
+hr.light-white {
+    border-color: #ffffff;
+}
+
 hr.primary:after {
     color: #10245E;
     background-color: #fff;
@@ -562,7 +566,7 @@ footer .footer-below {
 
 .band {
     margin: 0 auto;
-    max-width: 1170px;
+    max-width: 1570px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;

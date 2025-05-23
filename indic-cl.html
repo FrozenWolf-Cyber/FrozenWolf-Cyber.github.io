@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>A Study on Regularization-Based Continual Learning Methods for Indic ASR</title>
+
+    <link rel="shortcut icon" href="./img/logos/terminal.png" />
+
+
+<!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+  <!-- <link rel="icon" type="image/png" href="img/seal_icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+    <script src="js/app.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-52J0PM8XKV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-52J0PM8XKV');
+</script>
+	
+    <style>
+        .nav-pills {
+          position: relative;
+          display: inline;
+        }
+        .imtip {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b>A Study on Regularization-Based Continual Learning Methods for Indic ASR</b> 
+                <!--<small>
+                    CoRL 2021
+                </small>-->
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                <br>
+                <!-- <li>Gokul Adethya T</li><li>Bhanu Pratyush Mantha</li><li>Tianyang Wang</li><li>Xingjian Li</li><li>Min Xu</li> -->
+
+                <br><br>
+                    <a href="https://frozenwolf-cyber.github.io/" style="color:rgb(6, 83, 215);">
+                    <image src="./img/logos/terminal.png" height="40px"> <u>Gokul Adethya</u></a>
+                    
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <!-- <a href="img/projects/cmu/transcript.pdf"> -->
+                            <image src="img/paper_small.png" height="60px">
+                            <!-- <image src="img/new.png" height="20px" class="imtip"> -->
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+
+                        <!-- <li>
+                            <a href="https://youtu.be/ysFav0b472w">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://ai.googleblog.com/2022/08/towards-helpful-robots-grounding.html">
+                            <image src="img/google-ai-blog-small.png" height="60px">
+                                <image src="img/new.png" height="20px" class="imtip">
+                                <h4><strong>Blogpost</strong></h4>
+                            </a>
+                        </li> -->
+                         <li>
+                            <a href="https://wandb.ai/frozenwolf/CL-ASR/reports/Regularization-Based-CL-Methods-for-Indic-ASR--VmlldzoxMjg5OTAwNw">
+                            <image src="img/wandb.png" height="60px">
+                                <!-- <image src="img/new.png" height="20px" class="imtip"> -->
+                                <h4><strong>WanDB Report</strong></h4>
+                            </a>
+                            <li>
+                            <!-- <a href="https://sites.research.google/palm-saycan">
+                            <image src="img/demo.png" height="60px">
+                                <image src="img/new.png" height="20px" class="imtip">
+                                <h4><strong>Demo</strong></h4>
+                            </a> -->
+                        </li> 
+                        </li> 
+                    </ul>
+                </div>
+        </div>
+
+
+        
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <!-- <p style="text-align:center;">
+        	    	<video id="v0" width="100%" playsinline autoplay muted loop controls>
+                       <source src="img/demo_sequence_compressed.mp4" type="video/mp4">
+                   </video>
+                </p> -->
+
+
+             
+                <h3>
+                    Abstract
+                </h3>
+
+                
+
+                <p class="text-justify"> 
+                    <p>
+                        India's linguistic diversity challenges inclusive Automatic Speech Recognition (ASR) system development. Traditional multilingual models, requiring simultaneous access to all language data, are impractical due to sequential data arrival and privacy constraints.
+                      </p>
+                      <p>
+                        Continual Learning (CL) enables models to learn new languages sequentially without catastrophically forgetting prior knowledge. This paper investigates CL for ASR on Indian languages using the subset of the <em>indicSUPERB</em> benchmark.
+                      </p>
+                      <p>
+                        We employ a Conformer-based hybrid RNN-T/CTC model, initially pretrained on Hindi, which is subsequently trained incrementally on eight additional Indian languages, for a sequence of nine languages in total.
+                      </p>
+                      <p>
+                        We evaluate three prominent regularization and distillation-based CL strategies: Elastic Weight Consolidation (EWC), Memory Aware Synapses (MAS), and Learning without Forgetting (LwF), chosen for their suitability in no-replay, privacy-conscious scenarios.
+                      </p>
+                      <p>
+                        Performance is analyzed using Word Error Rate (WER) for both RNN-T and CTC paths on clean/noisy data, and knowledge retention via Backward Transfer. We explore varying training epochs (1, 2, 5 and 10) per task.
+                      </p>
+                      <p>
+                        Results, compared against naive fine-tuning, demonstrate CL's efficacy in mitigating forgetting for scalable ASR in diverse Indian languages under realistic constraints.
+                      </p>
+                          <p style="text-align:center;">
+        	    	<!-- <video id="v0" width="100%" playsinline autoplay muted loop controls>
+                       <source src="img/palm_saycan_teaser_compressed.mp4" type="video/mp4">
+                   </video> -->
+
+                    
+                </p>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+            	<br>
+
+                <p class="text-justify">
+                
+                    <h3>Observations</h3>
+
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/indiccl/1.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+
+
+                    <h4>CTC Benchmarking</h4>
+                    <p>
+                    As shown in Figure 1, the average WER across tasks reveals a clear ranking among methods. <strong>LwF</strong> achieves the best overall performance, followed by <strong>EWC</strong>, then <strong>MAS</strong>, with naive fine-tuning performing the worst. This ranking is particularly evident in short and medium task horizons. For longer sequences, however, the performance gap between methods narrows considerably. Naive fine-tuning, in particular, produces the highest WER maxima across tasks. When analyzing backward transfer (BWT), <strong>MAS</strong> performs best in short sequences, while <strong>LwF</strong> excels in medium-length tasks. For longer sequences, both <strong>MAS</strong> and <strong>LwF</strong> converge to similar average BWT values, whereas <strong>EWC</strong> and naive fine-tuning fall behind.
+                    </p>
+                    
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/indiccl/9.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+
+                    <h4>RNN-T Benchmarking</h4>
+                    <p>
+                        Figure 9 shows that RNN-T consistently outperforms CTC in WER across all continual learning strategies. Among these, <strong>EWC</strong> achieves the lowest WER across task lengths, demonstrating strong performance retention on the current task. However, this benefit comes at a cost: <strong>EWC</strong> exhibits the worst BWT of all methods, even lower than that of naive fine-tuning, indicating substantial forgetting. <strong>MAS</strong> shows some improvement in BWT for medium-length sequences, but for longer horizons, BWT scores deteriorate across all methods except <strong>EWC</strong>, eventually becoming nearly indistinguishable.
+                    </p>
+                    
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/indiccl/2.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+
+                    <h4>General Comparison of CL Methods under Noisy Settings</h4>
+                    <p>
+                    In noisy conditions (Figure 2), both <strong>LwF</strong> and <strong>MAS</strong> outperform <strong>EWC</strong> and the naive baseline in BWT, suggesting better retention of prior knowledge. Interestingly, noise appears to improve backward transfer, likely due to regularization effects. However, this improvement comes with a trade-off: WER increases, and models perform better on clean audio in absolute terms. This contrast indicates that noise can enhance stability, by reducing forgetting, while simultaneously impairing plasticity, by diminishing learning precision, which is reflected in the higher WER.
+                    </p>
+                    
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/indiccl/4.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/indiccl/3.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+                   
+
+                    <h4>WER Performance Analysis</h4>
+                    <p>
+                        Figures 3 and 4 present WER trends over increasing task lengths. Evaluations are averaged over the last two and current tasks, categorized as short (1–3), medium (1–6), and long (1–9). In general, models perform better with clean data. Among the methods, <strong>LwF</strong> consistently maintains WER below 1.0, with high stability indicated by narrow shaded variance regions.
+                    </p>
+                    <p>
+                    Interestingly, the upper bounds of noisy WER for <strong>LwF</strong> are comparable to the maxima seen under clean conditions. This can be attributed to its distillation-based loss, which prevents overfitting to noisy inputs by anchoring the model to previous predictions. <strong>MAS</strong> follows a similar pattern, though with slightly lower stability. <strong>EWC</strong> occasionally achieves better minimum WERs, particularly for short tasks, but continues to show poor BWT. The naive method performs surprisingly well in short sequences but fails to retain knowledge over longer horizons. Overall, <strong>LwF</strong> demonstrates the effectiveness of knowledge distillation in maintaining a balance between acquiring new knowledge and retaining previous learning. For longer sequences, average WER tends to decline, possibly due to simpler language characteristics in later tasks.
+                    </p>
+                    
+                   
+              
+                    <h4>EWC Ablation Studies</h4>
+
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/indiccl/8.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+                   
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/indiccl/14.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/indiccl/11.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/indiccl/5.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+
+                    <p>
+                    In Figure 5, we examine the impact of different regularization strengths in <strong>EWC</strong> by testing 
+                    <script type="math/tex">\lambda_{\text{EWC}} \in \{5, 10\}</script>. 
+                    While both values yield similar outcomes, 
+                    <script type="math/tex">\lambda_{\text{EWC}} = 10</script> 
+                    leads to slightly better WER in medium and long tasks, though the benefit is minimal in short tasks. BWT trends (Figure 8) for both values remain close to those of the naive baseline, suggesting limited ability to retain performance on earlier tasks. Additionally, results from epoch-wise ablation (Figure 11) show that increasing training epochs reduces WER, with the best results achieved at epoch 10. However, BWT steadily declines with more epochs (Figure 14), confirming the stability-plasticity trade-off: improved learning on new tasks often leads to increased forgetting of previous ones.
+                    </p>
+                    
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/indiccl/6.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+              
+                    <h4>LwF Ablation Studies</h4>
+                    <p>
+                    As shown in Figure 6, adjusting the distillation weight 
+                    <script type="math/tex">\alpha_{\text{KD}}</script> 
+                    significantly impacts <strong>LwF</strong>’s performance. A higher value of 0.5 severely limits the model’s ability to learn new tasks, resulting in WERs close to 1.0 across all horizons thus worse than naive fine-tuning for short sequences. In contrast, 
+                    <script type="math/tex">\alpha_{\text{KD}} = 0.1</script> 
+                    strikes a better balance, achieving WER comparable to or better than naive fine-tuning while maintaining much stronger BWT. As shown in Figure 8, the 0.5 configuration yields the highest BWT, primarily because the model barely updates and effectively freezes previous knowledge. The 0.1 setting enables more meaningful learning while controlling forgetting.
+                    </p>
+                    <p>
+                    Epoch-wise trends (Figures 10 and 14) are consistent with those observed in <strong>EWC</strong>. Increasing the epochs improves WER but worsens BWT.
+                    </p>
+                    
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/indiccl/7.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+                  
+                    <h4>MAS Ablation Studies</h4>
+                    <p>
+                    In Figure 7, we compare <strong>MAS</strong> with regularization weights 
+                    <script type="math/tex">\alpha_{\text{ctx}}</script> 
+                    of 0.3 and 1.0. The stronger setting of 1.0 consistently achieves better WER and shows more stable variance across tasks. Its shaded performance region closely overlaps with that of naive fine-tuning, though with lower dispersion. When examining BWT (Figure 8), the 0.3 configuration performs better, matching <strong>LwF</strong> in retaining knowledge.
+                    </p>
+
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/indiccl/12.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+
+                    <p>
+                    As with the other methods, <strong>MAS</strong> exhibits the stability-plasticity trade-off: increasing epochs (Figure 12) lowers WER but leads to worsening BWT (Figure 14). This consistent trend across methods emphasizes the fundamental challenge in continual learning of effectively balancing the acquisition of new information with the retention of existing knowledge.
+                    </p>
+
+
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/indiccl/13.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+
+                  
+                    <p style="text-align:center;"></p>
+                    <image src="img/projects/indiccl/10.png" class="img-responsive" class="img-responsive" style="max-width: 100%; transform: scale(1); transform-origin: center;"></image>
+                    </p>
+                   
+                    
+                      
+
+
+
+  
+  
+
+
+    <h3> WanDB Report </h3>
+    <br>
+    <iframe src="https://wandb.ai/frozenwolf/CL-ASR/reports/Regularization-Based-CL-Methods-for-Indic-ASR--VmlldzoxMjg5OTAwNw" style="border:none;height:1024px;width:100%">
+
+               
+	    </div>
+        </div>
+            
+       
+
+
+
+
+         <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation 
+                </h3> <a href="">[arxiv version]</a>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@inproceedings{
+    lorem ipsum
+}</textarea>
+                </div>
+            </div>
+             
+        </div>
+
+
+
+    </div>
+</body>
+</html>
