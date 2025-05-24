@@ -36,6 +36,35 @@
   padding-bottom: 50px;
 }
 
+.click_custom {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2e7d32; /* a deeper green for visibility */
+  background-color: #e8f5e9; /* light green background */
+  border-radius: 6px;
+  padding: 4px 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.click_custom:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.band a {
+  background-color: #e8f5e9 !important;
+  display: block; /* ensures background covers full card */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  padding: 10px;
+  text-decoration: none;
+}
+
+
+
 .larger-bold-text {
   font-size: 20px;
   font-weight: bold;
@@ -212,6 +241,12 @@
   
 } */
 
+.green-text {
+  color: green;
+}
+.red-text {
+  color: red;
+}
 @media (max-width: 900px) {
   #timeline ul li > div,
   #timeline ul li > div > div {
