@@ -1160,51 +1160,153 @@ The Octree-Based 3D OpenGL Renderer, created with PyOpenGL, efficiently renders 
                         <div class="modal-body">
                             <h2>Medical Multi-Modal Fusion & Cross Modal Alignment</h2>
                             <br>
-                            <h5>
+                            
                                 <img src="img/projects/iisc_mimic.gif" class="img-responsive img-centered" alt="">
                             
+                       
                                 <strong>Dataset Analysis and Performance Report</strong><br><br>
 
-                                This project focuses on analyzing and improving the performance of models using a multimodal dataset comprising Electronic Health Records (EHR) data, including demographic information, ICU vitals, Chest X-rays (CXR), ECG signals, and clinical notes. The primary tasks include predicting readmission, mortality, and length of stay (LOS) for patients based on data available within 24 to 48 hours after admission.<br><br>
-                                
-                                <strong>Modalities and Tasks</strong><br>
+                                <h6>This project focuses on analyzing and improving the performance of models using a multimodal dataset comprising Electronic Health Records (EHR) data, including demographic information, ICU vitals, Chest X-rays (CXR), ECG signals, and clinical notes. The primary tasks include predicting readmission, mortality, and length of stay (LOS) for patients based on data available within 24 to 48 hours after admission.<br><br>
+                                </h6>
+                                <h5><strong>Modalities and Tasks</strong></h5>
                                 <ul>
-                                    <li><strong>EHR Demographics:</strong> Includes categorical data like race and age, with age discretized into groups due to deidentification.</li>
-                                    <li><strong>ICU Vitals:</strong> A selection of 39 vital signs, time series data, and categorical events like procedures.</li>
-                                    <li><strong>CXR:</strong> Time series of chest X-ray images.</li>
-                                    <li><strong>ECG:</strong> 12-lead ECG signals represented as time series.</li>
-                                    <li><strong>Clinical Notes:</strong> Series of notes, such as discharge and radiology notes.</li>
+                                    <li><strong>EHR Demographics:</strong> <h6>Includes categorical data like race and age, with age discretized into groups due to deidentification.</h6></li>
+                                    <li><strong>ICU Vitals:</strong> <h6>A selection of 39 vital signs, time series data, and categorical events like procedures.</h6></li>
+                                    <li><strong>CXR:</strong> <h6>Time series of chest X-ray images.</h6></li>
+                                    <li><strong>ECG:</strong> <h6>12-lead ECG signals represented as time series.</h6></li>
+                                    <li><strong>Clinical Notes:</strong> <h6>Series of notes, such as discharge and radiology notes.</h6></li>
                                 </ul>
-                                The tasks involve:
+                                
+                                <h6>The tasks involve:</h6>
                                 <ol>
-                                    <li><strong>Readmission Prediction:</strong> Whether a patient will be readmitted within a month after discharge.</li>
-                                    <li><strong>Mortality Prediction:</strong> Predicting if the patient will survive or die.</li>
-                                    <li><strong>Length of Stay Prediction:</strong> Whether the stay will exceed 3 or 7 days.</li>
-                                </ol><br>
+                                    <li><strong>Readmission Prediction:</strong> <h6>Whether a patient will be readmitted within a month after discharge.</h6></li>
+                                    <li><strong>Mortality Prediction:</strong> <h6>Predicting if the patient will survive or die.</h6></li>
+                                    <li><strong>Length of Stay Prediction:</strong> <h6>Whether the stay will exceed 3 or 7 days.</h6></li>
+                                </ol>
                                 
-                                <strong>Dataset and Class Imbalance</strong><br>
+                                <h5><strong>Dataset and Class Imbalance</strong></h5>
                                 <ul>
-                                    <li>The dataset shows heavy class imbalance across all tasks and modalities. This imbalance persists even when considering the intersection of multiple modalities, leading to a significant portion of the data being unused.</li>
-                                    <li>The dataset was split into training, validation, and test sets with an approximately 80%-10%-10% split, maintaining the proportions of each modality combination and balancing the classes.</li>
-                                </ul><br>
+                                    <li><h6>The dataset shows heavy class imbalance across all tasks and modalities. This imbalance persists even when considering the intersection of multiple modalities, leading to a significant portion of the data being unused.</h6></li>
+                                    <li><h6>The dataset was split into training, validation, and test sets with an approximately 80%-10%-10% split, maintaining the proportions of each modality combination and balancing the classes.</h6></li>
+                                </ul>
                                 
-                                <strong>Experimentation Setup</strong><br>
+                                <h5><strong>Experimentation Setup</strong></h5>
                                 <ul>
-                                    <li><strong>Data Pipeline:</strong> A heavily modified HADM pipeline handles data loading and interlinked modality fusion. PyTorch Lightning with Distributed Data Parallel (DDP) is used for training, with configurations managed via YAML files.</li>
-                                    <li><strong>Metrics:</strong> Evaluation metrics include binary classification metrics monitored across train, validation, and test sets. Performance is also assessed at the modality and modality combination levels.</li>
-                                    <li><strong>Model Structure:</strong> The model pipeline includes a modality encoder, a time series encoder, and a binary classification head. Class imbalance is addressed through oversampling and undersampling strategies, depending on the skewness of the class distribution.</li>
-                                </ul><br>
+                                    <li><strong>Data Pipeline:</strong> <h6>A heavily modified HADM pipeline handles data loading and interlinked modality fusion. PyTorch Lightning with Distributed Data Parallel (DDP) is used for training, with configurations managed via YAML files.</h6></li>
+                                    <li><strong>Metrics:</strong> <h6>Evaluation metrics include binary classification metrics monitored across train, validation, and test sets. Performance is also assessed at the modality and modality combination levels.</h6></li>
+                                    <li><strong>Model Structure:</strong> <h6>The model pipeline includes a modality encoder, a time series encoder, and a binary classification head. Class imbalance is addressed through oversampling and undersampling strategies, depending on the skewness of the class distribution.</h6></li>
+                                </ul>
                                 
-                                <strong>Observations from Literature</strong><br>
+                                <h5><strong>Observations from Literature</strong></h5>
                                 <ul>
-                                    <li>Cross-modal alignment is rarely performed or analyzed extensively in current research, and ECG data is often excluded or underutilized in multimodal tasks. Reported F1 scores are typically below 0.7, highlighting the challenge in improving model performance.</li>
-                                </ul><br>
+                                    <li><h6>Cross-modal alignment is rarely performed or analyzed extensively in current research, and ECG data is often excluded or underutilized in multimodal tasks. Reported F1 scores are typically below 0.7, highlighting the challenge in improving model performance.</h6></li>
+                                </ul>
                                 
-                                <strong>Experimentation Results</strong><br>
-                                <ul>
-                                    <li><strong>Validation Embeddings:</strong> Representations of different training strategies and modality combinations are visualized to observe variation in embeddings.</li>
-                                    <li><strong>Task Metrics:</strong> Metrics for LOS_3, LOS_7, and mortality tasks are carefully monitored.</li>
-                                </ul><br>
+                                <h5><strong>Experimentation Results</strong><br></h5>
+                                <h5>4.2. Multi-Modal Learning Framework</h5>
+                                
+                                <h5>1. EHR:</h5>
+                                
+                                <h5>a. GRU-D vs RNN:</h5>
+                                <h5>Table 1: GRU-D vs RNN F1-score comparison.</h5>
+                                <table>
+                                <tr><th>MODEL</th><th>TEST F1 SCORE</th></tr>
+                                <tr><td>GRU-D</td><td>0.6625</td></tr>
+                                <tr><td>RNN</td><td>0.71844</td></tr>
+                                </table>
+                                <h5>RNN demonstrates superior performance compared to GRU-D, both in terms of F1 score and training time.</h5>
+                                
+                                <h5>b. RNN vs RNN-TS:</h5>
+                                <h5>Table 2: RNN vs RNN-TS F1-score comparison.</h5>
+                                <table>
+                                <tr><th>MODEL</th><th>TEST F1 SCORE</th></tr>
+                                <tr><td>RNN</td><td>0.71844</td></tr>
+                                <tr><td>RNN-TS</td><td>0.71549</td></tr>
+                                </table>
+                                
+                                <h5>c. RNN Class Balance vs. Without Class Balance:</h5>
+                                <h5>Table 3: RNN Class Balance comparison.</h5>
+                                <table>
+                                <tr><th>MODEL</th><th>TEST F1 SCORE</th></tr>
+                                <tr><td>RNN (NO CLASS BALANCE)</td><td>0.71288</td></tr>
+                                <tr><td>RNN (WITH CLASS BALANCE)</td><td>0.71844</td></tr>
+                                </table>
+                                
+                                <h5>d. Training Time:</h5>
+                                <h5>Table 4: GRU-D vs RNN-TS training time.</h5>
+                                <table>
+                                <tr><th>MODEL</th><th>TRAINING TIME (SECONDS)</th></tr>
+                                <tr><td>GRU-D</td><td>135,230</td></tr>
+                                <tr><td>RNN-TS</td><td>82,968</td></tr>
+                                </table>
+                                
+                                <h5>2. CXR:</h5>
+                                <h5>Table 5: Class balance and positional embedding comparison.</h5>
+                                <table>
+                                <tr><th>CONFIGURATION</th><th>TEST F1 SCORE</th></tr>
+                                <tr><td>No class balance and positional embedding</td><td>0.56609</td></tr>
+                                <tr><td>With class balance and positional embedding</td><td>0.66634</td></tr>
+                                <tr><td>With class balance but no positional embedding</td><td>0.62633</td></tr>
+                                </table>
+                                
+                                <h5>3. Notes:</h5>
+                                <h5>Table 6: Frozen vs unfrozen configurations.</h5>
+                                <table>
+                                <tr><th>CONFIGURATION</th><th>TEST F1 SCORE</th></tr>
+                                <tr><td>No class balance (Frozen)</td><td>0.12199</td></tr>
+                                <tr><td>Frozen (With class balance)</td><td>0.5004</td></tr>
+                                <tr><td>Frozen (No positional embedding)</td><td>0.24544</td></tr>
+                                <tr><td>Unfrozen (No class balance)</td><td>0.66085</td></tr>
+                                <tr><td>Unfrozen (With class balance)</td><td>0.63192</td></tr>
+                                </table>
+                                
+                                <h5>4. ECG:</h5>
+                                <h5>Table 7: Class balance impact on ECG performance.</h5>
+                                <table>
+                                <tr><th>CONFIGURATION</th><th>TEST F1 SCORE</th><th>AUROC</th></tr>
+                                <tr><td>Without class balance</td><td>0.0</td><td>0.5197</td></tr>
+                                <tr><td>With class balance</td><td>0.6236</td><td>0.52089</td></tr>
+                                </table>
+                                
+                                <h5>5. Total Comparison:</h5>
+                                <h5>Table 8: Summary across modalities.</h5>
+                                <table>
+                                <tr><th>MODALITY</th><th>TEST F1 SCORE</th><th>AUROC SCORE</th></tr>
+                                <tr><td>Notes</td><td>0.66085</td><td>0.62601</td></tr>
+                                <tr><td>ECG</td><td>0.6236</td><td>0.52089</td></tr>
+                                <tr><td>RNN-TS (EHR)</td><td>0.71549</td><td>0.77536</td></tr>
+                                <tr><td>CXR</td><td>0.66634</td><td>0.52081</td></tr>
+                                </table>
+                                
+                                <h5>6. Multimodality:</h5>
+                                <h5>Table 9: Fusion method comparison.</h5>
+                                <table>
+                                <tr><th>FUSION METHOD</th><th>F1 SCORE</th></tr>
+                                <tr><td>Sum Fusion of CXR + EHR</td><td>0.69789</td></tr>
+                                <tr><td>Transformer Fusion of CXR + EHR</td><td>0.70182</td></tr>
+                                <tr><td>Sum Fusion of CXR + EHR + Notes</td><td>0.45058</td></tr>
+                                <tr><td>Transformer Fusion of CXR + EHR + Notes</td><td>0.66817</td></tr>
+                                <tr><td>Sum Fusion of CXR + ECG + EHR + Notes</td><td>0.51967</td></tr>
+                                <tr><td>Transformer Fusion of CXR + ECG + EHR + Notes</td><td>0.61993</td></tr>
+                                </table>
+                                
+                                <h5>Table 10: Fusion vs. single modality baselines.</h5>
+                                <table>
+                                <tr><th>FUSION/MODALITY</th><th>F1 SCORE</th></tr>
+                                <tr><td>Transformer CXR + ECG + EHR + Notes</td><td>0.61993</td></tr>
+                                <tr><td>Transformer CXR + Notes + ECG</td><td>0.55538</td></tr>
+                                <tr><td>Transformer CXR + EHR + ECG</td><td>0.45439</td></tr>
+                                <tr><td>Transformer CXR + EHR + Notes</td><td>0.66817</td></tr>
+                                <tr><td>Transformer CXR + Notes</td><td>0.64509</td></tr>
+                                <tr><td>Transformer Notes + ECG</td><td>0.58547</td></tr>
+                                <tr><td><strong>SINGLE MODALITY BASELINE</strong></td><td></td></tr>
+                                <tr><td>EHR</td><td>0.71549</td></tr>
+                                <tr><td>CXR</td><td>0.66634</td></tr>
+                                <tr><td>Notes</td><td>0.66085</td></tr>
+                                <tr><td>ECG</td><td>0.62360</td></tr>
+                                </table>
+                                
+                                <h6>More modalities do not guarantee better performance. Fusion must be carefully designed.</h6>
                                 
                       
                                 
@@ -1238,7 +1340,7 @@ The Octree-Based 3D OpenGL Renderer, created with PyOpenGL, efficiently renders 
                                          
                                     </div>
 
-                            </h5>
+                            </h6>
                             <br>
                             <h3> WanDB Report </h3>
                             <br>
