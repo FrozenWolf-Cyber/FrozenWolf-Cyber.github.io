@@ -594,9 +594,26 @@
 
                 </div>
 
+                <div class="item-3">
 
 
-                <div class="item-3" style="background-color: #e8eef7;">
+                    <a href="https://frozenwolf-cyber.github.io/mass.html" class="card portfolio-link" data-toggle="modal">
+                        <div class="thumb"
+                            style="width: 25vw; background-image: url(img/projects/nus/15-ezgif.com-video-to-gif-converter.gif);">
+                        </div>
+                        <article class="article">
+                            <h1>MASS (My ASSistant)</h1>
+                            <h5>
+MASS uses an LLM to assist surgeons in automating surgical robots by sequencing actions from simple instructions. The project develops robotic motion planning with LLMs and reinforcement/imitation learning for surgery.
+                            </h5>
+                            <span> (Submitted) IEEE Robotics and Automation Letters - Laboratory of Medical Mechatronics@National University of Singapore</span>
+                        </article>
+                    </a>
+
+                </div>
+
+
+                <div class="item-4" style="background-color: #e8eef7;">
 
 
                     <a id="onclick-mimic" href="#mimic" class="card portfolio-link" data-toggle="modal">
@@ -614,23 +631,7 @@
 
 
 
-                <div class="item-4">
 
-
-                    <a href="https://frozenwolf-cyber.github.io/mass.html" class="card portfolio-link" data-toggle="modal">
-                        <div class="thumb"
-                            style="width: 25vw; background-image: url(img/projects/nus/15-ezgif.com-video-to-gif-converter.gif);">
-                        </div>
-                        <article class="article">
-                            <h1>MASS (My ASSistant)</h1>
-                            <h5>
-MASS uses an LLM to assist surgeons in automating surgical robots by sequencing actions from simple instructions. The project develops robotic motion planning with LLMs and reinforcement/imitation learning for surgery.
-                            </h5>
-                            <span> (Submitted) IEEE Robotics and Automation Letters - Laboratory of Medical Mechatronics@National University of Singapore</span>
-                        </article>
-                    </a>
-
-                </div>
 
                 <div class="item-5">
 
@@ -1192,6 +1193,12 @@ The Octree-Based 3D OpenGL Renderer, created with PyOpenGL, efficiently renders 
                                         </li>
                                          
                                     </div>
+                                    <h4> Summer internship report </h4>
+                                    <details open>
+                                    
+                                    <iframe src="img/projects/mimic.pdf" width="100%" height="600px"></iframe>
+                                    <br>
+                                    </details>
                                 <strong>Dataset Analysis and Performance Report</strong><br><br>
 
                                 <h6>This project focuses on analyzing and improving the performance of models using a multimodal dataset comprising Electronic Health Records (EHR) data, including demographic information, ICU vitals, Chest X-rays (CXR), ECG signals, and clinical notes. The primary tasks include predicting readmission, mortality, and length of stay (LOS) for patients based on data available within 24 to 48 hours after admission.<br><br>
@@ -1242,7 +1249,10 @@ The Octree-Based 3D OpenGL Renderer, created with PyOpenGL, efficiently renders 
                                 <tr><td>GRU-D</td><td>0.6625</td></tr>
                                 <tr><td>RNN</td><td>0.71844</td></tr>
                                 </table>
-                                <h5>RNN demonstrates superior performance compared to GRU-D, both in terms of F1 score and training time.</h5>
+                                <h5>RNN demonstrates superior performance compared to GRU-D, both in terms of F1
+                                    score and training time. RNN achieved a higher F1 score (0.71844 vs. 0.6625) and
+                                    was more efficient, taking almost 40% less time to train. This indicates that the RNN
+                                    model is both faster and more effective for EHR data</h5>
                                 
                                 <h5>b. RNN vs RNN-TS:</h5>
                                 <h5>Table 2: RNN vs RNN-TS F1-score comparison.</h5>
@@ -1251,6 +1261,10 @@ The Octree-Based 3D OpenGL Renderer, created with PyOpenGL, efficiently renders 
                                 <tr><td>RNN</td><td>0.71844</td></tr>
                                 <tr><td>RNN-TS</td><td>0.71549</td></tr>
                                 </table>
+                                <h5>RNN-TS (with time series data) performed almost similarly to the standard RNN (F1
+                                    score of 0.71549 vs. 0.71844). This suggests that incorporating time series data as
+                                    positional embeddings does not significantly enhance the model's performance and
+                                    may even slightly degrade it.</h5>
                                 
                                 <h5>c. RNN Class Balance vs. Without Class Balance:</h5>
                                 <h5>Table 3: RNN Class Balance comparison.</h5>
@@ -1259,7 +1273,10 @@ The Octree-Based 3D OpenGL Renderer, created with PyOpenGL, efficiently renders 
                                 <tr><td>RNN (NO CLASS BALANCE)</td><td>0.71288</td></tr>
                                 <tr><td>RNN (WITH CLASS BALANCE)</td><td>0.71844</td></tr>
                                 </table>
-                                
+                                <h5>
+                                    Class balancing provided a marginal improvement in performance, boosting the F1 score from 0.71288 to 0.71844. This suggests that while class balancing helps, its
+impact is not substantial for the EHR dataset.
+                                </h5>
                                 <h5>d. Training Time:</h5>
                                 <h5>Table 4: GRU-D vs RNN-TS training time.</h5>
                                 <table>
@@ -1267,6 +1284,9 @@ The Octree-Based 3D OpenGL Renderer, created with PyOpenGL, efficiently renders 
                                 <tr><td>GRU-D</td><td>135,230</td></tr>
                                 <tr><td>RNN-TS</td><td>82,968</td></tr>
                                 </table>
+                                <h5>RNN-TS is significantly faster to train compared to GRU-D, indicating that the
+                                    simpler RNN architecture is more efficient in this context, potentially due to the
+                                    reduced complexity in handling time-series data compared to GRU-D.</h5>
                                 
                                 <h5>2. CXR:</h5>
                                 <h5>Table 5: Class balance and positional embedding comparison.</h5>
@@ -1276,6 +1296,11 @@ The Octree-Based 3D OpenGL Renderer, created with PyOpenGL, efficiently renders 
                                 <tr><td>With class balance and positional embedding</td><td>0.66634</td></tr>
                                 <tr><td>With class balance but no positional embedding</td><td>0.62633</td></tr>
                                 </table>
+                                <h5>Class balancing improved the model’s performance significantly, increasing the F1
+                                    score from 0.56609 to 0.66634. Additionally, adding positional embeddings further
+                                    enhanced the performance (F1 score: 0.66634 vs. 0.62633), suggesting that positional
+                                    embeddings in CXR data play a role in improving the model's capacity to capture
+                                    temporal information.</h5>
                                 
                                 <h5>3. Notes:</h5>
                                 <h5>Table 6: Frozen vs unfrozen configurations.</h5>
@@ -1287,6 +1312,12 @@ The Octree-Based 3D OpenGL Renderer, created with PyOpenGL, efficiently renders 
                                 <tr><td>Unfrozen (No class balance)</td><td>0.66085</td></tr>
                                 <tr><td>Unfrozen (With class balance)</td><td>0.63192</td></tr>
                                 </table>
+                                <h5>Unfreezing the notes encoder and allowing the model to fine-tune the notes
+                                    embeddings significantly improved performance, with the F1 score rising to 0.66085
+                                    (without class balance). Class balancing marginally reduced performance in the
+                                    unfrozen model (0.63192). Frozen models performed poorly, highlighting the
+                                    importance of fine-tuning. Additionally, positional embeddings play a significant role,
+                                    as removing them drastically dropped the F1 score from 0.5004 to 0.24544.</h5>
                                 
                                 <h5>4. ECG:</h5>
                                 <h5>Table 7: Class balance impact on ECG performance.</h5>
@@ -1295,6 +1326,13 @@ The Octree-Based 3D OpenGL Renderer, created with PyOpenGL, efficiently renders 
                                 <tr><td>Without class balance</td><td>0.0</td><td>0.5197</td></tr>
                                 <tr><td>With class balance</td><td>0.6236</td><td>0.52089</td></tr>
                                 </table>
+                                <h5>Without class balancing, the ECG model failed to predict more than one class,
+                                    resulting in an F1 score of 0. However, class balancing greatly improved the
+                                    performance, yielding an F1 score of 0.6236. This demonstrates that class imbalance
+                                    severely impacts the ECG modality, and balancing is crucial for achieving meaningful
+                                    predictions. Additionally, this highlights that AUROC is not a reliable metric in
+                                    skewed predictions, as the AUROC for the unbalanced ECG model was still
+                                    comparable despite the F1 score being 0.</h5>
                                 
                                 <h5>5. Total Comparison:</h5>
                                 <h5>Table 8: Summary across modalities.</h5>
@@ -1305,7 +1343,11 @@ The Octree-Based 3D OpenGL Renderer, created with PyOpenGL, efficiently renders 
                                 <tr><td>RNN-TS (EHR)</td><td>0.71549</td><td>0.77536</td></tr>
                                 <tr><td>CXR</td><td>0.66634</td><td>0.52081</td></tr>
                                 </table>
-                                
+                                <h5>Among the single modalities, the EHR data using RNN-TS performed the best, with
+                                    an F1 score of 0.71549 and AUROC of 0.77536. CXR also performed well, with an
+                                    F1 score of 0.66634. Notes and ECG followed with slightly lower scores. The
+                                    AUROC scores indicate that while F1 remains the primary measure of interest,
+                                    AUROC is not as reliable in imbalanced datasets like ECG and CXR.</h5>
                                 <h5>6. Multimodality:</h5>
                                 <h5>Table 9: Fusion method comparison.</h5>
                                 <table>
@@ -1317,7 +1359,12 @@ The Octree-Based 3D OpenGL Renderer, created with PyOpenGL, efficiently renders 
                                 <tr><td>Sum Fusion of CXR + ECG + EHR + Notes</td><td>0.51967</td></tr>
                                 <tr><td>Transformer Fusion of CXR + ECG + EHR + Notes</td><td>0.61993</td></tr>
                                 </table>
-                                
+                                <h5>The transformer-based fusion consistently outperforms the sum fusion method across
+                                    all modality combinations. For instance, Transformer CXR + EHR (F1 score:
+                                    0.70182) slightly outperforms Sum CXR + EHR (F1 score: 0.69789). Similarly,
+                                    Transformer CXR + ECG + EHR + Notes (F1 score: 0.61993) shows significant
+                                    improvement over the sum fusion of the same modalities (F1 score: 0.51967). This
+                                    indicates that transformer-based fusion is more effective in learning from the complex interactions between modalities.</h5>
                                 <h5>Table 10: Fusion vs. single modality baselines.</h5>
                                 <table>
                                 <tr><th>FUSION/MODALITY</th><th>F1 SCORE</th></tr>
@@ -1334,7 +1381,21 @@ The Octree-Based 3D OpenGL Renderer, created with PyOpenGL, efficiently renders 
                                 <tr><td>ECG</td><td>0.62360</td></tr>
                                 </table>
                                 
-                                <h6>More modalities do not guarantee better performance. Fusion must be carefully designed.</h6>
+                                <h6>Although multimodal fusion using transformers improves performance in some cases,
+                                    adding more modalities does not always result in better outcomes. For example,
+                                    Transformer CXR + ECG + EHR + Notes (F1 score: 0.61993) performed worse
+                                    than EHR alone (F1 score: 0.71549). This suggests that poorly aligned modality
+                                    combinations can degrade performance. The best-performing multimodal models
+                                    should ideally surpass the highest-performing single-modality model. However, this is
+                                    not consistently observed, indicating that proper modality alignment and fusion are
+                                    critical for achieving optimal performance.
+                                    Transformer-based fusion provides better results compared to sum fusion in
+                                    multimodal learning, especially when integrating complex and diverse modalities such
+                                    as CXR, ECG, EHR, and Notes. However, simply combining modalities does not
+                                    guarantee improved performance; well-aligned models must be carefully designed to
+                                    achieve results that exceed the best-performing individual modalities. Ideally, the
+                                    performance of a multimodal model should be greater than the maximum F1 score of
+                                    the individual modalities (e.g., EHR or CXR alone).</h6>
                                 
                       
                                 
@@ -1550,8 +1611,135 @@ The Octree-Based 3D OpenGL Renderer, created with PyOpenGL, efficiently renders 
                                 <img src="img/projects/opticalflowex.png" class="img-responsive img-centered" alt="">
                             
                                 <h5>
-                                    We proposed a test-time adaptation method for optical flow estimation using RAFT-like optical flow models to assesses and improve EPE scores on the Sintel and KITTI 2015 datasets. The implementation is built with Lightning Fabric, allowing for efficient management of training processes. Key features include advanced offloading, checkpointing, and multi-node Distributed Data Parallel (DDP) strategies to optimize batch sizes and assess their impact on model performance. This approach is designed to improve the precision of optical flow predictions and adapt to various real-world conditions.
-                                    
+                                    <h5>
+                                        <strong>Optical Flow Estimation</strong><br><br>
+                                      
+                                        In this research, we focused on optimizing the existing RAFT (Recurrent All-Pairs Field Transforms) model for optical flow estimation using a <strong>multi-GPU</strong> and <strong>multi-node</strong> setup. The model was deployed in a distributed computing environment using <strong>Distributed Data Parallel (DDP)</strong> processing, facilitated by <strong>Lightning-Fabric</strong>. The primary aim of this setup was to efficiently scale the model's training to accommodate larger batch sizes without running into out-of-memory (OOM) errors, a common challenge in deep learning tasks with high computational demands like optical flow estimation.
+                                      
+                                        The RAFT model's architecture was not modified; instead, we concentrated on improving the scalability and memory handling to enhance computational efficiency.<br><br>
+                                      
+                                        To achieve these optimizations, a cluster of multiple GPUs and nodes was configured to maximize parallel processing capabilities. The use of <strong>DDP</strong> allowed us to distribute the workload across multiple GPUs and nodes, synchronizing their operations to ensure smooth and efficient model training. This setup provided the necessary computational resources to handle large-scale data while maintaining memory efficiency across devices.<br><br>
+                                      
+                                        Several key optimization techniques were employed to maximize the efficiency and scalability of the RAFT model in this distributed environment. First, <strong>Fairscale’s CPU offloading</strong> was integrated to shift some memory loads from the GPU to the CPU, thereby freeing up GPU resources for more critical computations. This technique helped mitigate memory bottlenecks, allowing for the handling of larger batch sizes.<br><br>
+                                      
+                                        Next, we applied <strong>mixed-precision training</strong>, which combines 16-bit and 32-bit floating point operations. This significantly reduced memory consumption without compromising the accuracy of the optical flow estimations.<br><br>
+                                      
+                                        Finally, we implemented <strong>activation checkpointing</strong> to further minimize memory usage. By only storing key intermediate results and recomputing others when necessary, we reduced the overall memory footprint during training, allowing for a higher batch size without OOM errors.<br><br>
+                                      
+                                        These optimizations, applied in tandem with a <strong>distributed multi-GPU, multi-node setup</strong>, enabled us to expand the computational capabilities of the RAFT model, ensuring more efficient training while preserving memory integrity.
+                                      </h5>
+
+                                      <!-- Load MathJax (Put this in the <head> or before closing </body> tag) -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<h5>
+  We begin with an input image \( x \), from which an initial optical flow map is generated: <br><br>
+  \[
+    \text{opt} = \text{model}(x) \tag{9.1}
+  \]
+  
+  Following this, the optical flow map is iteratively refined through a series of augmentation steps. Each step involves generating an augmented input \( x' \) as follows: <br><br>
+  \[
+    x' = \text{aug}(\text{opt}, x) \tag{9.2}
+  \]
+
+  The model then processes the augmented input \( x' \) to produce an updated optical flow map: <br><br>
+  \[
+    \text{opt}' = \text{model}(x') \tag{9.3}
+  \]
+
+  The loss function is calculated as the variance between the original optical flow map \( \text{opt} \) and the augmented optical flow map \( \text{opt}' \): <br><br>
+  \[
+    \text{Loss} = \text{Variance}(\text{opt}', \text{opt}) \tag{9.4}
+  \]
+
+  The primary goal of this algorithm is to reduce the variance between the optical flow map generated for the original input and the augmented images. The augmentation process generates random patches with pixel values constrained by the minimum and maximum values of the input image. These patches are then placed in random positions in both the original image \( x \) and its augmented counterpart \( x' \). The optical flow map produced by the model during test-time adaptation guides the patch placement, and minimizing the variance between the original and augmented optical flow maps helps the model improve its predictions on unseen data.
+</h5>
+
+
+<!-- Include MathJax (add once in your <head> or before </body>) -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <h5>
+        <img src="img/projects/optical-flow/fig 9.png" class="img-responsive img-centered" alt="">
+        
+      <strong>Figure 9:</strong> Percentage of absolute EPE score changes <br>
+      <img src="img/projects/optical-flow/fig 10.png" class="img-responsive img-centered" alt="">
+      <strong>Figure 10:</strong> EPE scores for different configurations <br>
+      <strong>Table 11:</strong> EPE scores for different configurations
+    
+      <br><br>
+    
+      <table style="border-collapse: collapse; width: 100%; text-align: center;">
+        <thead>
+          <tr>
+            <th style="border: 1px solid black;">Batch Size</th>
+            <th style="border: 1px solid black;">Number of Augmentations</th>
+            <th style="border: 1px solid black;">EPE Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid black;">8</td>
+            <td style="border: 1px solid black;">2</td>
+            <td style="border: 1px solid black;">2.75277</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid black;">2</td>
+            <td style="border: 1px solid black;">11</td>
+            <td style="border: 1px solid black;">2.75071</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid black;">6</td>
+            <td style="border: 1px solid black;">3</td>
+            <td style="border: 1px solid black;">2.78732</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid black;">2</td>
+            <td style="border: 1px solid black;">3</td>
+            <td style="border: 1px solid black;">2.74143</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid black;">6</td>
+            <td style="border: 1px solid black;">2</td>
+            <td style="border: 1px solid black;">2.80244</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid black;">2</td>
+            <td style="border: 1px solid black;">2</td>
+            <td style="border: 1px solid black;">2.76932</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <br><br>
+    
+      Figure 9 illustrates percentage of absolute EPE score decrease for different combinations of number of augmentations, number of epochs, and batch size, while Figure 10 illustrates different combinations of those parameters and their corresponding EPE scores. Table 11 presents EPE scores for different batch sizes and number of augmentations using a system equipped with six GPUs. 
+    
+      <br><br>
+    
+      Across these configurations, a reduction in EPE is observed, although the trend is not entirely consistent. This suggests that while augmentations and optimizations contribute to minimizing EPE, further tuning of batch size, GPU count, and augmentation strategies is needed to achieve definitive improvements.
+    
+      <br><br>
+    
+      For example, the configuration with a batch size of 2 and 11 augmentations resulted in the lowest EPE value of 2.75071. This configuration illustrates how batch size is calculated in distributed training, where the net batch size is determined using:
+    
+      \[
+        \text{Net Batch Size} = \text{Batch Size} \times (\text{Num of Augmentations} + 1) \times \text{Number of GPUs}
+      \]
+    
+      In this case:
+    
+      \[
+        2 \times (11 + 1) \times 6 = 144
+      \]
+    </h5>
+    
+                                      
                                     <br>
                                     <h5><strong>Tech Stack</strong><br>
                                     <ul>
