@@ -563,32 +563,46 @@ footer .footer-below {
     display: inline-block;
 }
 
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
 
+
+/* Band / Project grid */
 .band {
     margin: 0 auto;
-    max-width: 1570px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-gap: 20px;
-    text-align: left
-  }
-  @media (min-width: 30em) {
+    text-align: left;
+}
+
+@media (min-width: 30em) {
     .band {
-      grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
-  }
-  @media (min-width: 60em) {
+}
+
+@media (min-width: 60em) {
     .band {
-      grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* change from 4 to 3 */
     }
-  }
-  .band a:hover, a:focus {
+}
+.band a:hover,
+.band a:focus {
     color: #000000;
     text-decoration: none; 
     text-align: left;
-  }
-  .card {
+}
+
+
+
+
+/* Card styling */
+.card {
     background: white;
     text-decoration: none;
     color: #444;
@@ -599,73 +613,69 @@ footer .footer-below {
     position: relative;
     top: 0;
     transition: all .1s ease-in;
-  }
-  .card:hover {
+}
+
+.card:hover {
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.6);
-    -webkit-transform: scale(1.01, 1.01);
     transform: scale(1.01, 1.01);
-  }
-  .card article {
+}
+
+.card article {
     padding: 20px;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-  }
-  .card h1 {
+}
+
+.card h1 {
     font-size: 20px;
     margin: 0;
     color: #333;
-  }
-  .card p {
+}
+
+.card p {
     flex: 1;
     line-height: 1.4;
-  }
-  .card span {
+}
+
+.card span {
     font-size: 12px;
     font-weight: bold;
     color: #999;
     text-transform: uppercase;
     letter-spacing: .05em;
     margin: 2em 0 0 0;
-  }
-  .card .thumb {
+}
+
+.card .thumb {
     padding-bottom: 60%;
     background-size: cover;
     background-position: center center;
-  }
-  .item-1 .thumb {
+}
+
+/* Item specific styling */
+.item-1 .thumb,
+.item .thumb {
     max-width: 100%;
-    margin-bottom: 0%;
+    margin-bottom: 0;
     padding-bottom: 20%;
-    left: 10%;
+    left: 0; /* align with others */
     margin-top: 5%;
-  }
+    position: relative;
+}
 
-  .item {
-    grid-column: span 2;
-  }
+/* Remove grid-column spans */
+.item {
+    grid-column: auto;
+}
 
-  @media (min-width: 60em) {
+@media (min-width: 60em) {
     .item-1 {
-      grid-column: 1 / span 2;
+        grid-column: auto;
     }
-    .item-5 {
-        grid-column:2 / span 2;
-    }
-    .item-1 .thumb {
-        max-width: 100%;
-        padding-bottom: 20%;
-        position: relative;
-        left: 10%;
-        margin-top: 5%;
-     }
-     .item-5 .thumb {
-        max-width: 100%;
-        padding-bottom: 40%;
-        background-position: top;
-    }
-  }
+}
+
   .affiliation {
       margin-bottom: -10%;
   }
